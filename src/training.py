@@ -3,7 +3,9 @@ from utils.common import read_config
 from utils.data_mgmt import get_data
 from utils.model import create_model
 from utils.model import save_model
+from utils.model import save_plot
 
+import pandas as pd
 import argparse
 
 def training(config_path):
@@ -38,6 +40,17 @@ def training(config_path):
 
     model_name=config["artifacts"]["model_name"]
     save_model(model, model_name , model_dir= model_dir_path )
+
+    #save the plot
+    plots_dir = config["artifacts"]["plots_dir"]
+    plots_dir_path= os.path.join(artifacts_dir, plots_dir)
+    os.makedirs(plots_dir_path, exist_ok=True)
+
+    plots_name=config["artifacts"]["plots_name"]
+    df= pd.DataFrame(history.history)
+    save_plot(df,plots_name,plots_dir_path)
+
+
 
     
 

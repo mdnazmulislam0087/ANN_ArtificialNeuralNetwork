@@ -1,6 +1,7 @@
 import tensorflow as tf
 import time
 import os
+import matplotlib.pyplot as plt
 
 # create model
 
@@ -27,4 +28,20 @@ def save_model(model, model_name, model_dir):
     unique_filename = get_unique_filename(model_name)
     path_to_model = os.path.join(model_dir, unique_filename)
     model.save(path_to_model)
+
+
+# save plot
+# create unique path
+def get_unique_filePlotname(filename):
+    unique_filename= time.strftime(f"%Y%m%d_%H%M%S_{filename}")
+    return unique_filename
+
+def save_plot(df, plot_name, plots_dir ):
+    unique_filename = get_unique_filePlotname(plot_name)
+    path_to_plot = os.path.join(plots_dir, unique_filename)
+    df.plot(figsize=(10, 7))
+    plt.grid(True)
+    #plt.show()
+    plt.savefig(path_to_plot)
+
 
