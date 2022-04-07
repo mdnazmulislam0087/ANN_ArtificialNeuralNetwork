@@ -4,6 +4,7 @@ from src.utils.data_mgmt import get_data
 from src.utils.model import create_model
 from src.utils.model import save_model
 from src.utils.model import save_plot
+from src.utils.callbacks import get_callbacks
 
 import pandas as pd
 import argparse
@@ -46,9 +47,13 @@ def training(config_path):
 
     EPOCHS = config["params"]["epochs"]
     VALIDATION = (X_valid, y_valid)
+
+    # create callbacks
+    CALLBACK_LIST = get_callbacks(config, X_train)
+
     try:
         logging.info(">>>>> starting training >>>>>")
-        history = model.fit(X_train, y_train, epochs=EPOCHS, validation_data=VALIDATION)
+        history = model.fit(X_train, y_train, epochs=EPOCHS, validation_data=VALIDATION, callbacks=CALLBACK_LIST)
         logging.info("<<<<< training done successfully<<<<<\n")
     except Exception as e:
         logging.exception(e)
