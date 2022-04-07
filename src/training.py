@@ -1,16 +1,16 @@
 import os
-from utils.common import read_config
-from utils.data_mgmt import get_data
-from utils.model import create_model
-from utils.model import save_model
-from utils.model import save_plot
+from src.utils.common import read_config
+from src.utils.data_mgmt import get_data
+from src.utils.model import create_model
+from src.utils.model import save_model
+from src.utils.model import save_plot
 
 import pandas as pd
 import argparse
 import logging
 
 # Logger
-from utils.logger import setup_applevel_logger
+from src.utils.logger import setup_applevel_logger
 
 # General logs
 def loge(config_path):

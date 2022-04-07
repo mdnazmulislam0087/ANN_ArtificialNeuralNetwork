@@ -1,38 +1,32 @@
-import setuptools
+from setuptools import setup
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
-PROJECT_NAME = "ANN_ArtificialNeuralNetwork"
-USER_NAME = "mdnazmulislam0087"
-
-setuptools.setup(
-    name=f"{PROJECT_NAME}-{USER_NAME}",
-    version="0.0.4",
-    author=USER_NAME,
-    author_email="md.nazmul.islam0087@gmail.com",
-    description="its an implimentation of ANN",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url=f"https://github.com/{USER_NAME}/{PROJECT_NAME}",
-    project_urls={
-        "Bug Tracker": f"https://github.com/{USER_NAME}/{PROJECT_NAME}/issues",
-    },
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.7",
-    install_requires=[
-        "numpy",
+## edit below variables as per your requirements -
+REPO_NAME = "ANN_ArtificialNeuralNetwork"
+AUTHOR_USER_NAME = "mdnazmulislam0087"
+SRC_REPO = "src"
+LIST_OF_REQUIREMENTS = ["numpy",
         "tensorflow",
         "matplotlib",
         "seaborn",
         "pandas",
-        "PyYAML"
+        "PyYAML"]
 
-    ]
+
+setup(
+    name=SRC_REPO,
+    version="0.0.1",
+    author=AUTHOR_USER_NAME,
+    description="A small package for MLflow app",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    author_email="md.nazmul.islam0087@gmail.com",
+    packages=[SRC_REPO],
+    license="MIT",
+    python_requires=">=3.6",
+    install_requires=LIST_OF_REQUIREMENTS
 )
+
