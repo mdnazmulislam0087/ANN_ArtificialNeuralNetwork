@@ -2,7 +2,7 @@
 ANN | Artificial Neural Network
 
 """
-author: Nazmul 
+author: Nazmul islam
 
 email: md.nazmul.islam0087@gmail.com
 """
