@@ -1,3 +1,6 @@
+"""
+Author: Nazmul islam for checking
+"""
 import os
 from src.utils.common import read_config
 from src.utils.data_mgmt import get_data
