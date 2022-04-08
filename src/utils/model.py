@@ -18,7 +18,7 @@ def create_model(LOSS_FUNCTION, OPTIMIZER, METRICS, NUM_CLASSES):
     return model_clf
 
 # create unique path
-def get_unique_filename(filename):
+def get_unique_filename(filename): # try to use ascitime that is best
     unique_filename= time.strftime(f"%Y%m%d_%H%M%S_{filename}")
     return unique_filename
 

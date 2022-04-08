@@ -10,7 +10,7 @@ import pandas as pd
 import argparse
 import logging
 
-# Logger
+# Logger functions added 
 from src.utils.logger import setup_applevel_logger
 
 # General logs
@@ -58,7 +58,7 @@ def training(config_path):
     except Exception as e:
         logging.exception(e)
         raise e
-    # save the model
+    # save the model at
     logging.info(">>> Saving models >>>>")
     artifacts_dir = config["artifacts"]["artifacts_dir"]
     model_dir = config["artifacts"]["model_dir"]

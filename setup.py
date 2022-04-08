@@ -17,7 +17,7 @@ LIST_OF_REQUIREMENTS = ["numpy",
 
 setup(
     name=SRC_REPO,
-    version="0.0.1",
+    version="0.0.2",
     author=AUTHOR_USER_NAME,
     description="A small package for MLflow app",
     long_description=long_description,

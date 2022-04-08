@@ -24,4 +24,7 @@ pip install -r requirements.txt
 python src/training.py
 
 ```
-
+* To run tensorboard_logs
+```bash
+tensorboard --logdir=logs_dir/tensorboard_logs
+```
